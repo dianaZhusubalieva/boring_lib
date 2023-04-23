@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./styles.scss";
 import Dialog from "./Dialog";
-import MyTransition from "./transition/MyTransition";
+import MyTransition from "./MyTransition/MyTransition";
+import Popover from "./popover/Popover";
 
 const CornerDialog = ({ open }) => {
   return (
@@ -11,29 +12,39 @@ const CornerDialog = ({ open }) => {
   );
 };
 
-const Components = () => {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+const Button = ({ title, ...rest }) => (
+  <button {...rest} className="basic-button">
+    {title}
+  </button>
+);
 
-  const [openTest, setOpenTest] = useState(false);
+const Components = () => {
+  const [checkTransition, setCheckTransition] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+
   return (
     <div className={"components-wrapper"}>
       <div className={"components-content"}>
         <div className={"grid-container"}>
-          <button
+          <Button
+            title={"open modal dialog"}
             onClick={() => setIsDialogOpen(!isDialogOpen)}
-            className={"basic-button"}
-          >
-            open modal dialog
-          </button>
+          />
+          <Button
+            title={"see transition"}
+            onClick={() => setCheckTransition(!checkTransition)}
+          />
+          <Popover content={<div><span>hello</span></div>}>
 
-          <button
-            className={"basic-button"}
-            onClick={() => setOpenTest(!openTest)}
-          >
-            open block
-          </button>
+            <Button
+                title={"open popover"}
+                onClick={() => setIsPopoverOpen(!isPopoverOpen)}
+            />
+          </Popover>
         </div>
-        <MyTransition in={openTest}>
+
+        <MyTransition in={checkTransition}>
           <div
             style={{ background: "blue", width: "100px", height: "50px" }}
           ></div>

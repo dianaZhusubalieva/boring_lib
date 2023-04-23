@@ -1,0 +1,22 @@
+.popover-container {
+  position: relative;
+}
+
+.popover-trigger {
+  cursor: pointer;
+}
+
+.popover-content {
+  position: absolute;
+  z-index: 1;
+  top: calc(100% + 5px);
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  min-width: 200px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
