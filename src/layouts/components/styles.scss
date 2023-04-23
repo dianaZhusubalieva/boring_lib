@@ -9,10 +9,16 @@
     justify-content: center;
     height: 100%;
     padding: 40px;
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 20px;
+    }
   }
 }
 
-.basic-button{
+.basic-button {
   border: none;
   border-radius: 7px;
   height: fit-content;
@@ -23,9 +29,10 @@
 }
 
 ///dialog
-.dialog-wrapper{
+.dialog-wrapper {
   padding: 40px 30px;
   border-radius: 10%;
   background: white;
-  box-shadow: 0 0 1px rgba(67, 90, 111, 0.3), 0 16px 24px -8px rgba(67, 90, 111, 0.47);
+  box-shadow: 0 0 1px rgba(67, 90, 111, 0.3),
+    0 16px 24px -8px rgba(67, 90, 111, 0.47);
 }
