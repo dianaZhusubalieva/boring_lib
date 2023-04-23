@@ -8,16 +8,16 @@ const Portal = (props) => {
   const ref = useRef();
 
   useLayoutEffect(() => {
-    console.log("in useIsomorphicLayoutEffect");
     setMounted(true);
     ref.current = document.createElement("div");
-    ref.current.setAttribute("dialog-portal-container", "");
+    ref.current.setAttribute("dialog-portal", "");
 
     document.body.appendChild(ref.current);
-    console.log("mounted", mounted);
+    document.body.classList.add('blur-body');
+
     return () => {
-      console.log("in return");
       document.body.removeChild(ref.current);
+      document.body.classList.remove('blur-body');
     };
   }, []);
 
