@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./styles.scss";
-import Dialog from "./Dialog";
-import MyTransition from "./MyTransition/MyTransition";
-import Popover from "./popover/Popover";
+import Dialog from "../../components/dialog/Dialog";
+import MyTransition from "../../components/MyTransition/MyTransition";
+import Popover from "../../components/popover/Popover";
+import SearchSelect, {
+  mockSelectOptions,
+} from "../../components/selects/search-select/SearchSelect";
 
-const CornerDialog = ({ open }) => {
+const CornerDialog = ({ open }: any) => {
   return (
     <Dialog isOpen={open}>
       <div></div>
@@ -12,7 +15,7 @@ const CornerDialog = ({ open }) => {
   );
 };
 
-const Button = ({ title, ...rest }) => (
+const Button = ({ title, ...rest }: { title: string; onClick: () => void }) => (
   <button {...rest} className="basic-button">
     {title}
   </button>
@@ -22,6 +25,8 @@ const Components = () => {
   const [checkTransition, setCheckTransition] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+  ///search-select
+  const [selectedItemValue, setSelectedItemValue] = useState(null);
 
   return (
     <div className={"components-wrapper"}>
@@ -35,15 +40,30 @@ const Components = () => {
             title={"see transition"}
             onClick={() => setCheckTransition(!checkTransition)}
           />
-          <Popover content={<div><span>hello</span></div>}>
-
+          <Popover
+            content={
+              <div>
+                <span>hello</span>
+              </div>
+            }
+          >
             <Button
-                title={"open popover"}
-                onClick={() => setIsPopoverOpen(!isPopoverOpen)}
+              title={"open popover"}
+              onClick={() => setIsPopoverOpen(!isPopoverOpen)}
             />
           </Popover>
+
+          <SearchSelect
+            onChange={(value) => setSelectedItemValue(value)}
+            options={mockSelectOptions.map(({ id, subject }) => ({
+              label: subject,
+              value: id,
+            }))}
+            value={selectedItemValue}
+          />
         </div>
 
+        {/*/////////////////////////////////////////*/}
         <MyTransition in={checkTransition}>
           <div
             style={{ background: "blue", width: "100px", height: "50px" }}

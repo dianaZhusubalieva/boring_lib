@@ -1,0 +1,19 @@
+.basic-input {
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+.select-popover {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  &__item {
+    transition: ease-in-out 200ms;
+    padding: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background: #ececec;
+    }
+  }
+}

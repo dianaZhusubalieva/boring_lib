@@ -25,7 +25,7 @@ const MyTransition = ({ in: inProp, duration = 200, children }) => {
 
   return (
     <div
-      className={inProp && "my-transition-styles"}
+      className={inProp ? "my-transition-styles" : ""}
       style={style}
       onAnimationEnd={onAnimationEnd}
     >
