@@ -8,8 +8,8 @@ interface Option {
 interface Props {
   options: Option[];
 }
-const MultipleSelect: React.FC<Props> = ({ options }) => {
+const MultiSelect: React.FC<Props> = ({ options }) => {
   return <div></div>;
 };
 
-export default MultipleSelect;
+export default MultiSelect;

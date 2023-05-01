@@ -1,0 +1,24 @@
+ todo:
+ ++ dialogs, popovers
+ ++ selects with search
+ ++ table
+    multiselect
+    InputField (excepts error, error msg)
+
+    prevent body scroll on dialog;
+    switch
+
+    toaster
+    tooltip
+    spinner
+    create my own box (as ui-box)
+    pagination
+    tabs
+    global search (поиск по неправильному языку клавиш)
+
+
+
+
+
+
+

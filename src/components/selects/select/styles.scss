@@ -1,0 +1,26 @@
+.custom-select{
+  height: 25px;
+  min-width: 50px;
+  width: 100%;
+  border: 1px solid #2c43bf;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 8px;
+  .select-placeholder{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+  }
+  .select-arrow{
+    transition: 300ms ease-in-out;
+    color: #2c3e8f;
+
+  }
+  &__open{
+    .select-arrow{
+      rotate: 180deg;
+    }
+
+  }
+}

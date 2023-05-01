@@ -6,6 +6,8 @@ import Popover from "../../components/popover/Popover";
 import SearchSelect, {
   mockSelectOptions,
 } from "../../components/selects/search-select/SearchSelect";
+import Table from "components/table/Table";
+import Select from "components/selects/select/Select";
 
 const CornerDialog = ({ open }: any) => {
   return (
@@ -27,6 +29,7 @@ const Components = () => {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   ///search-select
   const [selectedItemValue, setSelectedItemValue] = useState(null);
+  const [basicSelectValue, setBasicSelectValue] = useState(null);
 
   return (
     <div className={"components-wrapper"}>
@@ -61,9 +64,21 @@ const Components = () => {
             }))}
             value={selectedItemValue}
           />
+
+          <Table />
+
+          <Select
+            options={mockSelectOptions.map(({ id, subject }) => ({
+              label: subject,
+              value: id,
+            }))}
+            onChange={(selection) => {
+              setBasicSelectValue(selection);
+            }}
+            value={basicSelectValue}
+          />
         </div>
 
-        {/*/////////////////////////////////////////*/}
         <MyTransition in={checkTransition}>
           <div
             style={{ background: "blue", width: "100px", height: "50px" }}
