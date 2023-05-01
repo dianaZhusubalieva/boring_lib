@@ -8,6 +8,7 @@ import SearchSelect, {
 } from "../../components/selects/search-select/SearchSelect";
 import Table from "components/table/Table";
 import Select from "components/selects/select/Select";
+import MultiSelect from "components/selects/multiSelect/MultiSelect";
 
 const CornerDialog = ({ open }: any) => {
   return (
@@ -30,7 +31,9 @@ const Components = () => {
   ///search-select
   const [selectedItemValue, setSelectedItemValue] = useState(null);
   const [basicSelectValue, setBasicSelectValue] = useState(null);
+  const [multiSelectValues, setMultiSelectValues] = useState<number[]>([]);
 
+  // console.log("multiSelectValues", multiSelectValues);
   return (
     <div className={"components-wrapper"}>
       <div className={"components-content"}>
@@ -39,10 +42,14 @@ const Components = () => {
             title={"open modal dialog"}
             onClick={() => setIsDialogOpen(!isDialogOpen)}
           />
+          {/*__________________*/}
+
           <Button
             title={"see transition"}
             onClick={() => setCheckTransition(!checkTransition)}
           />
+          {/*__________________*/}
+
           <Popover
             content={
               <div>
@@ -55,6 +62,7 @@ const Components = () => {
               onClick={() => setIsPopoverOpen(!isPopoverOpen)}
             />
           </Popover>
+          {/*__________________*/}
 
           <SearchSelect
             onChange={(value) => setSelectedItemValue(value)}
@@ -64,8 +72,10 @@ const Components = () => {
             }))}
             value={selectedItemValue}
           />
+          {/*__________________*/}
 
           <Table />
+          {/*__________________*/}
 
           <Select
             options={mockSelectOptions.map(({ id, subject }) => ({
@@ -76,6 +86,17 @@ const Components = () => {
               setBasicSelectValue(selection);
             }}
             value={basicSelectValue}
+          />
+          {/*__________________*/}
+          <MultiSelect
+            options={mockSelectOptions.map(({ id, subject }) => ({
+              label: subject,
+              value: id,
+            }))}
+            onChange={(newValues) => {
+              setMultiSelectValues(newValues);
+            }}
+            values={multiSelectValues}
           />
         </div>
 
