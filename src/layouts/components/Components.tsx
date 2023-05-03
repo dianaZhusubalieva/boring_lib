@@ -34,7 +34,18 @@ const Components = () => {
   const [multiSelectValues, setMultiSelectValues] = useState<number[]>([]);
 
   // console.log("multiSelectValues", multiSelectValues);
-  return (
+
+    const [selectedValue, setSelectedValue] = useState("");
+
+    function handleInputChange(event:any) {
+        setSelectedValue(event.target.value);
+    }
+    function handleInputBlur() {
+        document.body.focus();
+    }
+
+    ////////////////////
+    return (
     <div className={"components-wrapper"}>
       <div className={"components-content"}>
         <div className={"grid-container"}>
@@ -98,6 +109,29 @@ const Components = () => {
             }}
             values={multiSelectValues}
           />
+
+        <div style={{width :"100px"}}>
+
+            <label>
+                <input
+                    type="radio"
+                    value="option1"
+                    checked={selectedValue === "option1"}
+                    onChange={handleInputChange}
+                    onBlur={handleInputBlur}
+                />
+                Option 1
+            </label>
+            <label>
+                <input
+                    type="radio"
+                    value="option2"
+                    checked={selectedValue === "option2"}
+                    onChange={handleInputChange}
+                />
+                Option 2
+            </label>
+        </div>
         </div>
 
         <MyTransition in={checkTransition}>
@@ -107,6 +141,7 @@ const Components = () => {
         </MyTransition>
       </div>
       <CornerDialog open={isDialogOpen} />
+
     </div>
   );
 };

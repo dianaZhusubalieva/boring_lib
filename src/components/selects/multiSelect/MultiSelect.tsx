@@ -18,39 +18,38 @@ interface Props {
 const MultiSelect = memo(
   ({ values, options, onChange, placeholder = "Select..." }: Props) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [selectedValues, setSelectedValues] = useState(values);
 
-    const handleOptionClick = (selection: any) => {
-      if (values.includes(selection)) {
-        onChange(values.filter((option) => option !== selection));
+    function handleOptionSelect(value: any) {
+      console.log("onchange");
+      const newSelectedValues = [...selectedValues];
+      const index = selectedValues.indexOf(value);
+      if (index === -1) {
+        newSelectedValues.push(value);
       } else {
-        onChange([...values, selection]);
+        newSelectedValues.splice(index, 1);
       }
-    };
-    console.log(values);
+
+      setSelectedValues(newSelectedValues);
+      onChange(newSelectedValues);
+    }
+
     return (
       <>
         <Popover
           content={
-            <div className={"multiselect-popover-wrapper"}>
-              {options.map(({ label, value }, i) => (
-                <div
-                  key={i}
-                  className={"multiselect_item"}
-                  onClick={() => handleOptionClick(value)}
-                >
-                  <span>{label}</span>
+            <div className="multiselect-popover-wrapper">
+              {options.map((option) => (
+                <label key={option.value}>
+                  <span>{option.label}</span>
                   <input
-                    name="multiselect"
-                    type={"radio"}
-                    value={value}
-                    checked={values.includes(value)}
-                    onChange={() => {}}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleOptionClick(value);
-                    }}
+                    name="multiSelect"
+                    type="checkbox"
+                    value={option.value}
+                    checked={selectedValues.includes(option.value)}
+                    onChange={() => handleOptionSelect(option.value)}
                   />
-                </div>
+                </label>
               ))}
             </div>
           }
@@ -59,7 +58,9 @@ const MultiSelect = memo(
             onClick={() => setIsOpen(!isOpen)}
             className={clsx("custom-select", { "custom-select__open": isOpen })}
           >
-            <div className={"select-placeholder"}>{values.length}</div>
+            <div className={"select-placeholder"}>
+              {values.length ? values.length + " elems chosen" : placeholder}
+            </div>
             <span className={"select-arrow"}>↓</span>
           </div>
         </Popover>

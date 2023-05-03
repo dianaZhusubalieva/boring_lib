@@ -2,6 +2,16 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  label{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    input{
+      cursor: pointer;
+
+    }
+  }
   .multiselect_item{
     transition: ease-in-out 200ms;
     padding: 0 10px;
