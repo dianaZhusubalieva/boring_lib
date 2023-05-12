@@ -2,7 +2,7 @@
  ++ dialogs, popovers
  ++ selects with search
  ++ table
-    multiselect
+ ++ multiselect
     InputField (excepts error, error msg)
 
     prevent body scroll on dialog;

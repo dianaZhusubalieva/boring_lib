@@ -9,6 +9,7 @@ import SearchSelect, {
 import Table from "components/table/Table";
 import Select from "components/selects/select/Select";
 import MultiSelect from "components/selects/multiSelect/MultiSelect";
+import Cards from "components/cards/Cards";
 
 const CornerDialog = ({ open }: any) => {
   return (
@@ -33,19 +34,8 @@ const Components = () => {
   const [basicSelectValue, setBasicSelectValue] = useState(null);
   const [multiSelectValues, setMultiSelectValues] = useState<number[]>([]);
 
-  // console.log("multiSelectValues", multiSelectValues);
-
-    const [selectedValue, setSelectedValue] = useState("");
-
-    function handleInputChange(event:any) {
-        setSelectedValue(event.target.value);
-    }
-    function handleInputBlur() {
-        document.body.focus();
-    }
-
-    ////////////////////
-    return (
+  ////////////////////
+  return (
     <div className={"components-wrapper"}>
       <div className={"components-content"}>
         <div className={"grid-container"}>
@@ -110,28 +100,10 @@ const Components = () => {
             values={multiSelectValues}
           />
 
-        <div style={{width :"100px"}}>
+          {/*__________*/}
+          <Cards />
 
-            <label>
-                <input
-                    type="radio"
-                    value="option1"
-                    checked={selectedValue === "option1"}
-                    onChange={handleInputChange}
-                    onBlur={handleInputBlur}
-                />
-                Option 1
-            </label>
-            <label>
-                <input
-                    type="radio"
-                    value="option2"
-                    checked={selectedValue === "option2"}
-                    onChange={handleInputChange}
-                />
-                Option 2
-            </label>
-        </div>
+          {/*  _________*/}
         </div>
 
         <MyTransition in={checkTransition}>
@@ -141,7 +113,6 @@ const Components = () => {
         </MyTransition>
       </div>
       <CornerDialog open={isDialogOpen} />
-
     </div>
   );
 };
