@@ -1,0 +1,38 @@
+@keyframes combined {
+  0% {
+    translate: 0;
+  }
+  100% {
+    translate: 100%;
+    transform: rotate(360deg);
+  }
+}
+
+#target {
+  height: 50px;
+  width: 50px;
+  background: red;
+  border-radius: 1vw;
+  animation-fill-mode: forwards;
+  &:hover {
+    animation: combined 2s;
+  }
+}
+
+
+/** show a warning in browsers that don't support it **/
+.warning {
+  padding: 1em;
+  border: 1px solid #ccc;
+  max-width: 100%;
+}
+.warning p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+@supports (scale: 1) {
+  .warning {
+    display: none;
+  }
+}

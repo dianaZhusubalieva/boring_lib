@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ForTests from "../layouts/components/tests/ForTests";
 import Components from "../layouts/components/Components";
 import Queue from "../verstka/Queue";
+import Animations from "../styling/animations/Animations";
 
 const MyRoutes = () => {
   return (
@@ -13,6 +14,7 @@ const MyRoutes = () => {
         <Route path={"/test"} element={<ForTests />} />
           <Route path={"/components"} element={<Components />} />
           <Route path={"/queue"} element={<Queue />} />
+          <Route path={"/animations"} element={<Animations />} />
       </Routes>
     </BrowserRouter>
   );
