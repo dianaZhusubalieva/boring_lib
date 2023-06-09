@@ -1,0 +1,72 @@
+$green: #00978d;
+$grey: #f3f3f4;
+$font: #4f4b5c;
+
+.react-datepicker {
+  border: 1px solid $grey;
+  box-shadow: 0 16px 20px -8px rgba(17, 12, 34, 0.25);
+  border-radius: 12px;
+
+  &__day--in-selecting-range {
+    background-color: $grey !important;
+  }
+  &__day--range-start {
+    color: white !important;
+  }
+  &__day--range-end {
+    background-color: $green !important;
+
+    box-shadow: 0 1px 2px -1px rgba(17, 12, 34, 0.08);
+    border-radius: 0 8px 8px 0 !important;
+    color: white !important;
+  }
+
+  &__day--selecting-range-start {
+    background-color: $green !important;
+  }
+  &__day--selecting-range-end {
+    background-color: $green !important;
+  }
+  &__day--in-range {
+    background-color: $grey;
+    color: $font;
+    &:hover {
+      background-color: $grey;
+    }
+  }
+
+  &__day {
+    margin: 0;
+    border-radius: 0;
+    color: $font;
+  }
+  &__day--selected {
+    background-color: $green;
+    box-shadow: 0 1px 2px -1px rgba(17, 12, 34, 0.08);
+    border-radius: 8px 0 0 8px;
+    &:hover {
+      background-color: $green;
+    }
+  }
+  &__day-names {
+    margin-top: 20px;
+  }
+  &__day-name {
+    color: #8d8a95;
+    font-size: 14px;
+  }
+  &__current-month {
+    color: #4f4b5c;
+  }
+  &__header {
+    background-color: white;
+    padding-top: 16px;
+    padding-bottom: 8px;
+    border: none;
+  }
+}
+.react-datepicker__day--in-range
+  not(.react-datepicker__day--selecting-range-start, .react-datepicker__day--selecting-range-end) {
+  background-color: $grey !important;
+  color: #282626 !important;
+}

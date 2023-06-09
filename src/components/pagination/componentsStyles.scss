@@ -1,0 +1,43 @@
+.content-block {
+  padding-top: 7vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .first-photo {
+    img {
+      width: 1700px;
+    }
+    margin-bottom: 5vh;
+  }
+
+  .poster-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #c2c4dc;
+    width: 100%;
+
+    .photos-under-poster {
+      padding-bottom: 60px;
+      img {
+        margin: 10px;
+      }
+    }
+  }
+}
+.pagination-block {
+  a {
+    color: black !important;
+  }
+}
+.pagination-btn {
+  &__active {
+    a {
+      background: #313131 !important;
+      color: white !important;
+    }
+  }
+}

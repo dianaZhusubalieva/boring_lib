@@ -26,9 +26,14 @@ const HomeView = () => {
                 onClick={() => navigate("/components")}
                 style={{ cursor: "pointer" }}
               >
-                Features
+                Components
               </li>
-              <li>Pricing</li>
+              <li
+                  onClick={() => navigate("/animations")}
+                  style={{ cursor: "pointer" }}
+              >
+                Animations
+              </li>
               <li>Testimonials</li>
               <li>Contact</li>
             </ul>

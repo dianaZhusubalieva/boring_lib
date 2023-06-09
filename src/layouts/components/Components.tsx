@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./styles.scss";
-import Dialog from "../../components/dialog/Dialog";
-import MyTransition from "../../components/MyTransition/MyTransition";
+import Dialog from "components/dialog/withPortal/Dialog";
+import MyTransition from "components/MyTransition/MyTransition";
 import Popover from "../../components/popover/Popover";
 import SearchSelect, {
   mockSelectOptions,
@@ -10,6 +10,7 @@ import Table from "components/table/Table";
 import Select from "components/selects/select/Select";
 import MultiSelect from "components/selects/multiSelect/MultiSelect";
 import Cards from "components/cards/Cards";
+import Example from "hooks/input/example";
 
 const CornerDialog = ({ open }: any) => {
   return (
@@ -50,6 +51,9 @@ const Components = () => {
             onClick={() => setCheckTransition(!checkTransition)}
           />
           {/*__________________*/}
+
+          <Cards />
+          {/*  ______________*/}
 
           <Popover
             content={
@@ -101,8 +105,8 @@ const Components = () => {
           />
 
           {/*__________*/}
-          <Cards />
 
+          <Example />
           {/*  _________*/}
         </div>
 

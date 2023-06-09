@@ -3,10 +3,10 @@ import { useInput } from "hooks/input/input";
 
 const Example = () => {
   const email = useInput("", { minLength: 3 });
-  const password = useInput("", { isEmpty: true, minLength: 3 });
+  const password = useInput("", { checkEmpty: true, minLength: 3 });
+    console.log(email)
   return (
     <div>
-      {email.minLengthError}
       <input
         onBlur={(e) => email.onBlur(e)}
         value={email.value}
