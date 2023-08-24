@@ -1,0 +1,28 @@
+//.animated-title{
+//  transition: transform 0.5s;
+//  transform: translate(-100vw, 0);
+//  margin-bottom: 4.52rem;
+//  font-weight: 500;
+//}
+
+.animated-title {
+  transition: transform 0.5s;
+  transform: translate(-100vw, 0);
+  margin: 0;
+  padding: 0;
+
+  //margin-bottom: 4.52rem;
+  //font-weight: 500;
+  //position: relative;
+  //left: -100vw;
+  //animation: slideIn 0.5s forwards;
+}
+
+//@keyframes slideIn {
+//  0% {
+//    left: -100vw;
+//  }
+//  100% {
+//    left: 0;
+//  }
+//}

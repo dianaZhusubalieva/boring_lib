@@ -4,8 +4,8 @@ import "./styles.scss";
 import clsx from "clsx";
 
 interface Option {
-  label: string;
-  value: any;
+    label: string;
+    value: any;
 }
 
 interface Props {
