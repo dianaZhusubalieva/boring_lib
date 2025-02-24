@@ -1,7 +1,7 @@
-import  { ReactNode, useRef, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 import "./styles.scss";
-import useOutsideClick from "../../hooks/hooks";
 import MyTransition from "./../MyTransition/MyTransition";
+import  useOutsideClick from "hooks/useOutsideClick";
 
 interface Props {
   content: ReactNode;

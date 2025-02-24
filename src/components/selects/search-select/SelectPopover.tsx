@@ -1,8 +1,8 @@
 import React, { ReactNode, useRef } from "react";
 import "./styles.scss";
 import clsx from "clsx";
-import useOutsideClick from "hooks/hooks";
 import MyTransition from "components/MyTransition/MyTransition";
+import useOutsideClick from "hooks/useOutsideClick";
 
 interface Props {
     content: ReactNode;
