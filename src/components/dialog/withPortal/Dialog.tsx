@@ -1,5 +1,5 @@
-import Portal from "components/dialog/withPortal/Portal";
 import "components/dialog/withPortal/styles.scss";
+import Portal from "./Portal";
 
 const Dialog = ({ isOpen, children }:any) => {
   if (!isOpen) {

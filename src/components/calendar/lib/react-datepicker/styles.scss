@@ -65,8 +65,7 @@ $font: #4f4b5c;
     border: none;
   }
 }
-.react-datepicker__day--in-range
-  not(.react-datepicker__day--selecting-range-start, .react-datepicker__day--selecting-range-end) {
+.react-datepicker__day--in-range:not(.react-datepicker__day--selecting-range-start, .react-datepicker__day--selecting-range-end) {
   background-color: $grey !important;
   color: #282626 !important;
 }

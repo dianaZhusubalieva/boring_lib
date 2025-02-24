@@ -1,12 +1,12 @@
 import React from "react";
 import "./styles.scss";
-import { ReactComponent as Logo } from "icons/Group.svg";
-import img1 from "images/Group.png";
-import img2 from "images/Group 5.png";
+import { ReactComponent as Logo } from "./../../icons/Group.svg";
+import img1 from "./../../images/Group.png";
+import img2 from "./../../images/Group 5.png";
 
-import first from "images/first.png";
-import second from "images/second.png";
-import third from "images/third.png";
+import first from "./../../images/first.png";
+import second from "./../../images/second.png";
+import third from "./../../images/third.png";
 import { useNavigate } from "react-router-dom";
 
 const HomeView = () => {

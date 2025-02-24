@@ -20,3 +20,20 @@
   line-height: 1.5;
   color: #333;
 }
+
+///////////////hover popover
+.popover-test {
+  position: absolute;
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0; /* Hidden by default */
+  pointer-events: none;
+}
+
+.popover-test.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
