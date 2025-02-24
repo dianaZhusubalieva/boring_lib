@@ -1,19 +1,36 @@
-.basic-input {
-  padding: 10px;
-  border: 1px solid grey;
-  border-radius: 5px;
+.popover-container {
+    position: relative;
+    z-index: 1;
 }
-.select-popover {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  &__item {
-    transition: ease-in-out 200ms;
-    padding: 0 10px;
-    border-radius: 5px;
+
+.popover-trigger {
     cursor: pointer;
-    &:hover {
-      background: #ececec;
-    }
-  }
+}
+
+.popover-content {
+    position: absolute;
+    z-index: 1;
+    top: calc(100% + 5px);
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(140, 140, 140, 0.2);
+
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    width: 100%;
+}
+.transition-wrapper {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+}
+
+.datepicker {
+    padding: 0;
+    box-shadow: none;
+    width: fit-content;
+    display: flex;
 }

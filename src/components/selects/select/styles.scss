@@ -1,26 +1,43 @@
-.custom-select{
-  height: 25px;
-  min-width: 50px;
-  width: 100%;
-  border: 1px solid #2c43bf;
-  border-radius: 5px;
+.custom-select {
+  //height: 25px;
   display: flex;
   justify-content: space-between;
-  padding: 2px 8px;
-  .select-placeholder{
+  padding: 5px 16px;
+  color: #242424;
+  background: #ffffff;
+  opacity: 0.8;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  .select-placeholder {
     font-size: 12px;
     display: flex;
     align-items: center;
   }
-  .select-arrow{
+  .select-arrow {
     transition: 300ms ease-in-out;
     color: #2c3e8f;
-
   }
-  &__open{
-    .select-arrow{
+  svg {
+    transition: ease-in-out 250ms;
+  }
+  &__open {
+    svg {
       rotate: 180deg;
     }
+  }
+}
 
+.select-popover {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  &__item {
+    transition: ease-in-out 200ms;
+    padding: 3px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background: rgba(241, 241, 241, 0.68);
+    }
   }
 }

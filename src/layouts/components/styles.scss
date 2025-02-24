@@ -1,43 +1,65 @@
 .components-wrapper {
-  background: #c0c0c0;
-  height: 100vh;
-  .components-content {
-    max-width: 72em;
-    background: #dcdcdc;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    padding: 40px;
+    background: #c0c0c0;
+    height: 100vh;
+    .components-content {
+        max-width: 72em;
+        background: #dcdcdc;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        padding: 40px;
 
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      grid-template-rows: min-content;
-      gap: 20px;
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            grid-template-rows: min-content;
+            gap: 20px;
+        }
     }
-  }
 }
 
 .basic-button {
-  border: none;
-  border-radius: 7px;
-  height: fit-content;
-  background: #2c3e8f;
-  padding: 10px 20px;
-  color: white;
-  cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    height: fit-content;
+    background: #2c3e8f;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
 
-  border: 0;
-  box-shadow: 0 5px 0 #0a174f;
-  font: inherit;
-  margin: 0;
-  outline: 0;
-  transition: all 0.1s linear;
-  &:active{
-    box-shadow: 0 2px 0 #006599;
-    transform: translateY(3px);
-  }
+    border: 0;
+    box-shadow: 0 5px 0 #0a174f;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    transition: all 0.1s linear;
+    &:active {
+        box-shadow: 0 2px 0 #006599;
+        transform: translateY(3px);
+    }
 }
 
-///dialog
+///hover items
+.hover-item {
+    transition: border 0.5s;
+    position: relative;
+    width: fit-content;
+    &:after {
+        content: "";
+        width: 0;
+        height: 1.5px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #171717;
+        transition: all 0.5s;
+    }
+    &:hover:after {
+        width: 100%;
+    }
+    &:not(:hover):after {
+        left: auto;
+        right: 0;
+    }
+}
